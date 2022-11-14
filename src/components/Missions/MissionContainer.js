@@ -10,7 +10,7 @@ function MissionContainer() {
             <th>Missions</th>
             <th>Description</th>
             <th>Status</th>
-            <th></th>
+            <th> </th>
           </tr>
         </thead>
         <tbody>

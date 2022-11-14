@@ -7,9 +7,9 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<h1>Space Travelers Rockets</h1>} />
-        <Route path="/missions" element={<h1>Space Travelers Missions</h1>} />
-        <Route path="/profile" element={<h1>Space Travelers Profile</h1>} />
+        <Route path="/" element={<p>Hello from rockets!</p>} />
+        <Route path="/missions" element={<p>Hello from missions!</p>} />
+        <Route path="/profile" element={<p>Hello from profile!</p>} />
       </Routes>
     </div>
   );

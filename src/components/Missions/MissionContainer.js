@@ -1,14 +1,15 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import '../../styles/mission.css';
 
 function MissionContainer() {
   return (
-    <div>
-      <Table striped bordered hover size="sm">
+    <div className="container">
+      <Table striped bordered hover size="lg">
         <thead>
           <tr>
             <th>Missions</th>
-            <th>Description</th>
+            <th colSpan={4}>Description</th>
             <th>Status</th>
             <th> </th>
           </tr>
@@ -16,20 +17,19 @@ function MissionContainer() {
         <tbody>
           <tr>
             <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colSpan={2}>Larry the Bird</td>
-            <td>@twitter</td>
+            <td colSpan={4}>
+              Mark Mark Mark Mark Mark Mark Mark Mark Mark Mark
+            </td>
+            <td>
+              <button type="button" className="not-member p-2">
+                Not a Member
+              </button>
+            </td>
+            <td>
+              <button type="button" className="join rounded-1 p-1">
+                Join Mission
+              </button>
+            </td>
           </tr>
         </tbody>
       </Table>

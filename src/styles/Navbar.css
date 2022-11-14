@@ -1,0 +1,40 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2em;
+}
+
+.home-page {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #121212;
+  gap: 1em;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.navlinks {
+  list-style-type: none;
+  display: flex;
+  gap: 1.2em;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+.activelink {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1em;
+  border: 1px solid;
+  color: #2e31307d;
+}

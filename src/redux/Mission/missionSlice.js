@@ -6,8 +6,8 @@ export const missionSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
-    //Do stuff here
+    // Do stuff here
   },
 });
 
-export default rocketSlice.reducer;
+export default missionSlice.reducer;

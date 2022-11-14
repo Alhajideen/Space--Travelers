@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../images/logo.png';
 
-const Header = () => (
+const Navbar = () => (
   <header>
     <div>
       <Link to="/">
@@ -42,4 +42,4 @@ const Header = () => (
   </header>
 );
 
-export default Header;
+export default Navbar;

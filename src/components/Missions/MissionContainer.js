@@ -9,7 +9,7 @@ function MissionContainer() {
   const missions = useSelector((state) => state.mission.data);
   useEffect(() => {
     dispatch(getMissions());
-  }, [dispatch]);
+  }, []);
 
   const handleMember = (id) => {
     dispatch(joinMission(id));

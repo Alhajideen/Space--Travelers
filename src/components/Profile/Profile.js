@@ -14,8 +14,7 @@ function Profile() {
     if (joinedMisssion.length === 0) {
       setEmpty(true);
     }
-  }, [dispatch]);
-  console.log(mission);
+  }, []);
   return (
     <div>
       <div className="my-missions">

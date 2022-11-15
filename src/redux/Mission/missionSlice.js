@@ -13,23 +13,22 @@ export const missionSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
-    // Do stuff here
-    joinMission(state, action) {
+    joinMission(state, { payload }) {
       const newMissions = [];
-      console.log(state.data);
       state.data.map((mission) => {
-        if (mission.id === action.payload) {
-          newMissions.push({ ...mission, member: !mission.member });
-          console.log(mission);
+        if (mission.mission_id === payload) {
+          newMissions.push({
+            ...mission,
+            member: !mission.member,
+          });
         } else {
           newMissions.push(mission);
         }
         return newMissions;
       });
-      // console.log(newMissions);
+      return { ...state, data: newMissions };
     },
   },
-
   extraReducers: (Builder) => {
     Builder.addCase(getMissions.pending, (state) => {
       const newState = { ...state, loading: true };
@@ -43,7 +42,6 @@ export const missionSlice = createSlice({
           arr.push(myObj);
         });
         const newState = { ...state, data: arr, loading: false };
-        console.log(state.data);
         return newState;
       })
       .addCase(getMissions.rejected, (state) => {

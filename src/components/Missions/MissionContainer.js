@@ -9,14 +9,10 @@ function MissionContainer() {
   const missions = useSelector((state) => state.mission.data);
   useEffect(() => {
     dispatch(getMissions());
-    setTimeout(() => {
-      // console.log(missions.data);
-    }, 100);
-  }, []);
+  }, [dispatch]);
 
   const handleMember = (id) => {
     dispatch(joinMission(id));
-    // console.log(missions);
   };
   return (
     <div className="mission-container my-3">
@@ -30,26 +26,50 @@ function MissionContainer() {
           </tr>
         </thead>
         <tbody>
-          {missions.map((mission) => (
-            <tr key={mission.mission_id} className="table-rows">
-              <td className="mission-name">{mission.mission_name}</td>
-              <td>{mission.description}</td>
-              <td className="status">
-                <button type="button" className="not-member p-1">
-                  Not a Member
-                </button>
-              </td>
-              <td className="status">
-                <button
-                  type="button"
-                  className="join rounded-1 p-1"
-                  onClick={() => handleMember(mission.mission_id)}
-                >
-                  Join Mission
-                </button>
-              </td>
-            </tr>
-          ))}
+          {missions.map((mission) => {
+            if (!mission.member) {
+              return (
+                <tr key={mission.mission_id} className="table-rows">
+                  <td className="mission-name">{mission.mission_name}</td>
+                  <td>{mission.description}</td>
+                  <td className="status">
+                    <button type="button" className="not-member p-1">
+                      Not a Member
+                    </button>
+                  </td>
+                  <td className="status">
+                    <button
+                      type="button"
+                      className="join rounded-1 p-1"
+                      onClick={() => handleMember(mission.mission_id)}
+                    >
+                      Join Mission
+                    </button>
+                  </td>
+                </tr>
+              );
+            }
+            return (
+              <tr key={mission.mission_id} className="table-rows">
+                <td className="mission-name">{mission.mission_name}</td>
+                <td>{mission.description}</td>
+                <td className="status">
+                  <button type="button" className="member p-1">
+                    Active Member
+                  </button>
+                </td>
+                <td className="status">
+                  <button
+                    type="button"
+                    className="leave p-1"
+                    onClick={() => handleMember(mission.mission_id)}
+                  >
+                    Leave Mission
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
     </div>

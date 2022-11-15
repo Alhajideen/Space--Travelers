@@ -7,7 +7,7 @@
   width: 45%;
 }
 
-td {
+.mission-data {
   border: 1px solid grey !important;
   width: 500px !important;
   padding: 10px;

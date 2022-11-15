@@ -24,7 +24,7 @@ const Profile = () => {
             {!empty
               && mission.map((item) => (
                 <tr key={item.mission_id}>
-                  <td>{item.mission_name}</td>
+                  <td className="mission-data">{item.mission_name}</td>
                 </tr>
               ))}
             {empty && (

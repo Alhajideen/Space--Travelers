@@ -1,3 +1,8 @@
+.mission-container {
+  width: 95%;
+  margin: auto;
+}
+
 .not-member {
   background-color: grey;
   color: white;
@@ -7,4 +12,14 @@
 
 .join {
   background-color: transparent;
+}
+
+.status,
+.mission-name {
+  width: 12%;
+  overflow: hidden;
+}
+
+.table-rows {
+  vertical-align: middle;
 }

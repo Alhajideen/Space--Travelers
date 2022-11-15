@@ -23,11 +23,9 @@ const Profile = () => {
           <tbody className="mission-tbody">
             {!empty
               && mission.map((item) => (
-                <div className="table-row" key={item.mission_id}>
-                  <tr>
-                    <td>{item.mission_name}</td>
-                  </tr>
-                </div>
+                <tr key={item.mission_id}>
+                  <td>{item.mission_name}</td>
+                </tr>
               ))}
             {empty && (
               <tr>

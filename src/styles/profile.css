@@ -7,12 +7,8 @@
   width: 45%;
 }
 
-.table-row {
-  border: 1px solid black;
-  border-collapse: collapse;
+td {
+  border: 1px solid grey !important;
+  width: 500px !important;
   padding: 10px;
-}
-
-tr {
-  font-size: 20px;
 }

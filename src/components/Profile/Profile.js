@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import '../../styles/profile.css';
 
-function Profile() {
+const Profile = () => {
   const missions = useSelector((state) => state.mission.data);
   const [mission, setMission] = useState([]);
   const [empty, setEmpty] = useState(false);
@@ -13,18 +14,20 @@ function Profile() {
     }
   }, []);
   return (
-    <div>
+    <div className="profile">
       <div className="my-missions">
         <div className="header-text">
           <h1>My Missions</h1>
         </div>
-        <table>
-          <tbody>
+        <table className="mission-table">
+          <tbody className="mission-tbody">
             {!empty
               && mission.map((item) => (
-                <tr key={item.mission_id}>
-                  <td>{item.mission_name}</td>
-                </tr>
+                <div className="table-row" key={item.mission_id}>
+                  <tr>
+                    <td>{item.mission_name}</td>
+                  </tr>
+                </div>
               ))}
             {empty && (
               <tr>
@@ -36,6 +39,6 @@ function Profile() {
       </div>
     </div>
   );
-}
+};
 
 export default Profile;

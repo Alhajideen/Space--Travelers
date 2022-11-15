@@ -4,14 +4,13 @@ import '../../styles/mission.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMissions, joinMission } from '../../redux/Mission/missionSlice';
 
-function MissionContainer() {
+const MissionContainer = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.mission.data);
 
   useEffect(() => {
     if (missions.length === 0) {
       dispatch(getMissions());
-      console.log('dispatched');
     }
   }, [dispatch]);
 
@@ -78,6 +77,6 @@ function MissionContainer() {
       </Table>
     </div>
   );
-}
+};
 
 export default MissionContainer;

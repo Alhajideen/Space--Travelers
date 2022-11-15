@@ -1,0 +1,18 @@
+.profile {
+  width: 95%;
+  margin: auto;
+}
+
+.mission-table {
+  width: 45%;
+}
+
+.table-row {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+tr {
+  font-size: 20px;
+}

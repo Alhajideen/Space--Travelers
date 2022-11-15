@@ -26,11 +26,11 @@
 
 a {
   color: blue;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .activelink {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .divider {

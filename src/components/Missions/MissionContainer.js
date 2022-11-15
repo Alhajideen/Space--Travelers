@@ -9,7 +9,10 @@ function MissionContainer() {
   const missions = useSelector((state) => state.mission.data);
 
   useEffect(() => {
-    dispatch(getMissions());
+    if (missions.length === 0) {
+      dispatch(getMissions());
+      console.log('dispatched');
+    }
   }, [dispatch]);
 
   const handleMember = (id) => {

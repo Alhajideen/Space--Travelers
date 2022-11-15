@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getMissions } from '../../redux/Mission/missionSlice';
+import { useSelector } from 'react-redux';
 
 function Profile() {
-  const dispatch = useDispatch();
   const missions = useSelector((state) => state.mission.data);
   const [mission, setMission] = useState([]);
   const [empty, setEmpty] = useState(false);
   useEffect(() => {
-    dispatch(getMissions());
     const joinedMisssion = missions.filter((item) => item.member === true);
     setMission(joinedMisssion);
     if (joinedMisssion.length === 0) {

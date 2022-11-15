@@ -7,9 +7,10 @@ import { getMissions, joinMission } from '../../redux/Mission/missionSlice';
 function MissionContainer() {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.mission.data);
+
   useEffect(() => {
     dispatch(getMissions());
-  }, []);
+  }, [dispatch]);
 
   const handleMember = (id) => {
     dispatch(joinMission(id));

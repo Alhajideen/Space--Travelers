@@ -2,8 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getMissions = createAsyncThunk('getMission', async () => {
-  const missions = await axios('https://api.spacexdata.com/v3/missions');
-  // console.log(missions);
+  const missions = await axios.get('https://api.spacexdata.com/v3/missions');
   return missions.data;
 });
 

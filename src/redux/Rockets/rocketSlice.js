@@ -48,7 +48,7 @@ export const fetchRocketsData = createAsyncThunk(FETCH_ROCKETS_DATA,
     const fetchedData = responseJSON.map((data) => ({
       id: data.id,
       name: data.rocket_name,
-      type: data.rocket_type,
+      desc: data.description,
       image: data.flickr_images[0],
     }));
     thunkApi.dispatch(initRocketsData(fetchedData));

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateReservation } from '../../redux/Rockets/rocketSlice';
 import '../../styles/profile.css';
 
 const Profile = () => {
@@ -9,15 +10,28 @@ const Profile = () => {
   const [mission, setMission] = useState([]);
   const [empty, setEmpty] = useState(false);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const joinedMisssion = missions.filter((item) => item.member === true);
     setMission(joinedMisssion);
     if (joinedMisssion.length === 0) {
       setEmpty(true);
     }
-    setReservedRockets(rockets.filter((rocket) => rocket.reserved));
   }, []);
 
+  useEffect(() => {
+    setReservedRockets(rockets.filter((rocket) => rocket.reserved));
+  }, [rockets]);
+
+  const cancelResertvation = (id) => {
+    dispatch(
+      updateReservation({
+        id,
+        action: 'cancel',
+      }),
+    );
+  };
   return (
     <div className="profile">
       <div className="my-missions">
@@ -51,6 +65,7 @@ const Profile = () => {
               reservedRockets.length ? reservedRockets.map((rocket) => (
                 <tr key={rocket.id}>
                   <td>{rocket.name}</td>
+                  <td><button type="button" onClick={() => cancelResertvation(rocket.id)}>Cancel Reservation</button></td>
                 </tr>
               )) : (
                 <tr>

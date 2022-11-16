@@ -24,10 +24,20 @@ export const rocketSlice = createSlice({
         loading: action.payload,
       };
     },
+
+    addReservation(state, action) {
+      state.rocketsArray.map((rocket) => {
+        const mappedRocket = rocket;
+        if (mappedRocket.id === action.payload) {
+          mappedRocket.reserved = true;
+        }
+        return mappedRocket;
+      });
+    },
   },
 });
 
-export const { setLoading, initRocketsData } = rocketSlice.actions;
+export const { setLoading, initRocketsData, addReservation } = rocketSlice.actions;
 
 export const fetchRocketsData = createAsyncThunk(FETCH_ROCKETS_DATA,
   async (_, thunkApi) => {
@@ -50,6 +60,7 @@ export const fetchRocketsData = createAsyncThunk(FETCH_ROCKETS_DATA,
       name: data.rocket_name,
       desc: data.description,
       image: data.flickr_images[0],
+      reserved: false,
     }));
     thunkApi.dispatch(initRocketsData(fetchedData));
     thunkApi.dispatch(setLoading(false));

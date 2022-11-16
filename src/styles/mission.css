@@ -1,0 +1,42 @@
+.mission-container {
+  width: 95%;
+  margin: auto;
+}
+
+.not-member {
+  background-color: grey;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+.join {
+  background-color: transparent;
+}
+
+.status,
+.mission-name {
+  width: 13%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.table-rows {
+  vertical-align: middle;
+}
+
+.member {
+  border: none;
+  background-color: #18a2b8;
+  font-size: 15px;
+  color: white;
+  border-radius: 15px;
+}
+
+.leave {
+  background-color: transparent;
+  color: red;
+  border: 1px solid red;
+  font-size: 15px;
+  border-radius: 5px;
+}

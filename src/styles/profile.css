@@ -1,0 +1,14 @@
+.profile {
+  width: 95%;
+  margin: auto;
+}
+
+.mission-table {
+  width: 45%;
+}
+
+.mission-data {
+  border: 1px solid grey !important;
+  width: 500px !important;
+  padding: 10px;
+}

@@ -25,11 +25,11 @@ export const rocketSlice = createSlice({
       };
     },
 
-    addReservation(state, action) {
+    updateReservation(state, action) {
       state.rocketsArray.map((rocket) => {
         const mappedRocket = rocket;
-        if (mappedRocket.id === action.payload) {
-          mappedRocket.reserved = true;
+        if (mappedRocket.id === action.payload.id) {
+          mappedRocket.reserved = action.payload.action === 'add';
         }
         return mappedRocket;
       });
@@ -37,7 +37,7 @@ export const rocketSlice = createSlice({
   },
 });
 
-export const { setLoading, initRocketsData, addReservation } = rocketSlice.actions;
+export const { setLoading, initRocketsData, updateReservation } = rocketSlice.actions;
 
 export const fetchRocketsData = createAsyncThunk(FETCH_ROCKETS_DATA,
   async (_, thunkApi) => {

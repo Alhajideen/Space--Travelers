@@ -1,13 +1,16 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addReservation } from '../../redux/Rockets/rocketSlice';
+import { updateReservation } from '../../redux/Rockets/rocketSlice';
 
 const Rockets = () => {
   const { rocketsArray, loading } = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
 
-  const handleClick = (id) => {
-    dispatch(addReservation(id));
+  const handleReservation = (id, reserved) => {
+    dispatch(updateReservation({
+      id,
+      action: reserved ? 'cancel' : 'add',
+    }));
   };
 
   return (
@@ -18,7 +21,7 @@ const Rockets = () => {
             <img src={rocket.image} alt="Rocket" />
             <div>{rocket.name}</div>
             <div>{rocket.desc}</div>
-            <button type="button" className="reserve-btn" onClick={() => handleClick(rocket.id)}> Reserve Rocket</button>
+            <button type="button" className="reserve-btn" onClick={() => handleReservation(rocket.id, rocket.reserved)}>{rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket' }</button>
           </li>
         ))
       }

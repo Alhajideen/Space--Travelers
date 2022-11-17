@@ -34,7 +34,7 @@ const Profile = () => {
     );
   };
   return (
-    <div className="profile">
+    <div className="profile-container">
       <div className="my-missions">
         <div className="header-text">
           <h2>My Missions</h2>
@@ -56,21 +56,23 @@ const Profile = () => {
         </table>
       </div>
 
-      <div>
-        <div>
+      <div className="my-rockets">
+        <div className="header-text">
           <h2>My Rockets</h2>
         </div>
-        <table>
+        <table className="rockets-table">
           <tbody>
             {
               reservedRockets.length ? reservedRockets.map((rocket) => (
                 <tr key={rocket.id}>
-                  <td>{rocket.name}</td>
-                  <td><button type="button" onClick={() => cancelResertvation(rocket.id)}>Cancel Reservation</button></td>
-                  <td>
-                    <ExternalLink href={rocket.url}>
-                      Read more
-                    </ExternalLink>
+                  <td className="rocket-data">
+                    {rocket.name}
+                    <div>
+                      <button type="button" className="cancel-btn" onClick={() => cancelResertvation(rocket.id)}>Cancel Reservation</button>
+                      <ExternalLink href={rocket.url} className="read-more">
+                        Read more
+                      </ExternalLink>
+                    </div>
                   </td>
                 </tr>
               )) : (

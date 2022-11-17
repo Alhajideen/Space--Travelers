@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ExternalLink } from 'react-external-link';
 import { updateReservation } from '../../redux/Rockets/rocketSlice';
 import '../../styles/profile.css';
+import { joinMission } from '../../redux/Mission/missionSlice';
 
 const Profile = () => {
   const missions = useSelector((state) => state.mission.data);
@@ -19,7 +20,11 @@ const Profile = () => {
     if (joinedMisssion.length === 0) {
       setEmpty(true);
     }
-  }, []);
+  }, [missions]);
+
+  const leaveMission = (id) => {
+    dispatch(joinMission(id));
+  };
 
   useEffect(() => {
     setReservedRockets(rockets.filter((rocket) => rocket.reserved));
@@ -44,7 +49,21 @@ const Profile = () => {
             {!empty
               && mission.map((item) => (
                 <tr key={item.mission_id}>
-                  <td className="mission-data">{item.mission_name}</td>
+                  <td className="mission-data">
+                    {item.mission_name}
+                    <div>
+                      <button
+                        type="button"
+                        className="cancel-btn mx-2"
+                        onClick={() => leaveMission(item.mission_id)}
+                      >
+                        Leave Mission
+                      </button>
+                      <ExternalLink href={item.wikipedia} className="read-more">
+                        Read more
+                      </ExternalLink>
+                    </div>
+                  </td>
                 </tr>
               ))}
             {empty && (
@@ -62,25 +81,31 @@ const Profile = () => {
         </div>
         <table className="rockets-table">
           <tbody>
-            {
-              reservedRockets.length ? reservedRockets.map((rocket) => (
+            {reservedRockets.length ? (
+              reservedRockets.map((rocket) => (
                 <tr key={rocket.id}>
                   <td className="rocket-data">
                     {rocket.name}
                     <div>
-                      <button type="button" className="cancel-btn" onClick={() => cancelResertvation(rocket.id)}>Cancel Reservation</button>
+                      <button
+                        type="button"
+                        className="cancel-btn"
+                        onClick={() => cancelResertvation(rocket.id)}
+                      >
+                        Cancel Reservation
+                      </button>
                       <ExternalLink href={rocket.url} className="read-more">
                         Read more
                       </ExternalLink>
                     </div>
                   </td>
                 </tr>
-              )) : (
-                <tr>
-                  <td>You have not reserved any rocket.</td>
-                </tr>
-              )
-            }
+              ))
+            ) : (
+              <tr>
+                <td>You have not reserved any rocket.</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

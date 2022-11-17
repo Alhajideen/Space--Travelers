@@ -1,31 +1,44 @@
 .header-container {
   display: flex;
+  width: 92vw;
+  margin: 0 auto;
+  padding: 1.2em;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 2em;
+  border-bottom: 1px solid lightgray;
 }
 
 .home-page {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #121212;
   gap: 1em;
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
+}
+
+.title {
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 2.2em;
+  color: #3f3f3f;
+  letter-spacing: -0.5px;
 }
 
 .navlinks {
-  list-style-type: none;
-  display: flex;
   gap: 1.2em;
+  display: flex;
+  margin-bottom: 0;
+  font-weight: 500;
+  align-items: center;
+  list-style-type: none;
 }
 
 a {
-  color: blue;
+  font-size: 0.9em;
   text-decoration: none !important;
 }
 
@@ -36,5 +49,4 @@ a {
 .divider {
   height: 1em;
   border: 1px solid;
-  color: #2e31307d;
 }

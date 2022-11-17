@@ -60,6 +60,7 @@ export const fetchRocketsData = createAsyncThunk(FETCH_ROCKETS_DATA,
       name: data.rocket_name,
       desc: data.description,
       image: data.flickr_images[0],
+      url: data.wikipedia,
       reserved: false,
     }));
     thunkApi.dispatch(initRocketsData(fetchedData));

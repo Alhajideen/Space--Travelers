@@ -1,14 +1,55 @@
-.profile {
-  width: 95%;
-  margin: auto;
+.profile-container {
+  width: 92vw;
+  padding: 1.2em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-.mission-table {
-  width: 45%;
+.my-missions,
+.my-rockets {
+  width: 47%;
 }
 
-.mission-data {
-  border: 1px solid grey !important;
-  width: 500px !important;
-  padding: 10px;
+.header-text h2 {
+  font-size: 1.75em;
+  margin-bottom: 0.75em;
+}
+
+.mission-table,
+.rockets-table {
+  width: 100%;
+}
+
+.mission-data,
+.rocket-data {
+  border: 1px solid #e9e9e9 !important;
+  border-bottom: 1.4px solid #ddd9d9 !important;
+  padding: 1em;
+}
+
+.rocket-data {
+  display: flex;
+  padding: 0.5em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rocket-data div {
+  gap: 1em;
+  display: flex;
+}
+
+.read-more {
+  font-size: 0.9em;
+  border-radius: 0.4em;
+  cursor: pointer;
+  padding: 0.6em 1em;
+  color: #fff;
+  border: none;
+  background-color: #007bff;
+}
+
+.read-more:hover {
+  color: #fff;
 }

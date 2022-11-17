@@ -1,0 +1,61 @@
+.rockets-container {
+  width: 92vw;
+  margin: 0 auto;
+  padding: 1.2em;
+}
+
+.rockets-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.rocket {
+  gap: 1em;
+  display: flex;
+  margin-bottom: 1.55em;
+}
+
+.rocket-img {
+  width: 250px;
+}
+
+.rocket-name {
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.rocket-desc {
+  font-size: 0.95em;
+  margin-bottom: 1.5em;
+}
+
+.res-btn,
+.cancel-btn {
+  font-size: 0.9em;
+  border-radius: 0.4em;
+  cursor: pointer;
+  padding: 0.6em 1em;
+}
+
+.cancel-btn {
+  color: gray;
+  border: 1px solid gray;
+  background-color: transparent;
+}
+
+.res-btn {
+  color: #fff;
+  border: none;
+  background-color: #007bff;
+}
+
+.rocket-badge {
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-right: 8px;
+  padding: 0.1em 0.5em;
+  border-radius: 0.35em;
+  background-color: #19a3b9;
+}

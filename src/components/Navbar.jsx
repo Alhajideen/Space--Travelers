@@ -7,11 +7,11 @@ const Navbar = () => (
   <header className="header-container">
     <NavLink to="/" className="home-page">
       <img src={logo} alt="logo" className="logo" />
-      <h1 className="title">Space Traverlers&apos; Hub</h1>
+      <h1 className="title" data-testid="title">Space Traverlers&apos; Hub</h1>
     </NavLink>
 
     <nav>
-      <ul className="navlinks">
+      <ul className="navlinks" data-testid="navlinks">
         <li className="navItem">
           <NavLink
             to="/"
@@ -34,6 +34,7 @@ const Navbar = () => (
           <NavLink
             to="/profile"
             className={({ isActive }) => (isActive ? 'activelink' : undefined)}
+            data-testid="profile-btn"
           >
             My Profile
           </NavLink>

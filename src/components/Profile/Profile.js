@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ExternalLink } from 'react-external-link';
 import { updateReservation } from '../../redux/Rockets/rocketSlice';
 import '../../styles/profile.css';
 
@@ -66,6 +67,11 @@ const Profile = () => {
                 <tr key={rocket.id}>
                   <td>{rocket.name}</td>
                   <td><button type="button" onClick={() => cancelResertvation(rocket.id)}>Cancel Reservation</button></td>
+                  <td>
+                    <ExternalLink href={rocket.url}>
+                      Read more
+                    </ExternalLink>
+                  </td>
                 </tr>
               )) : (
                 <tr>

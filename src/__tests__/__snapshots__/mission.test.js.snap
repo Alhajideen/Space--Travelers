@@ -147,6 +147,7 @@ Object {
         </div>
         <div
           class="my-rockets"
+          data-testid="reserved-rockets"
         >
           <div
             class="header-text"
@@ -200,6 +201,7 @@ Object {
       </div>
       <div
         class="my-rockets"
+        data-testid="reserved-rockets"
       >
         <div
           class="header-text"

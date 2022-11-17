@@ -11,7 +11,7 @@ const Rockets = () => {
       updateReservation({
         id,
         action: reserved ? 'cancel' : 'add',
-      })
+      }),
     );
   };
 
@@ -21,19 +21,21 @@ const Rockets = () => {
         ? 'Fetching'
         : rocketsArray.map((rocket) => (
           <li key={rocket.id} className="rocket">
-              <img src={rocket.image} alt="Rocket" />
-              <div>{rocket.name}</div>
-              <div>
-                {rocket.reserved ? <span>Reserved</span> : ''} {rocket.desc}
-              </div>
-              <button
-                type="button"
-                className="reserve-btn"
-                onClick={() => handleReservation(rocket.id, rocket.reserved)}
-              >
-                {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
-              </button>
-            </li>
+            <img src={rocket.image} alt="Rocket" />
+            <div>{rocket.name}</div>
+            <div>
+              {rocket.reserved ? <span>Reserved</span> : ''}
+              {' '}
+              {rocket.desc}
+            </div>
+            <button
+              type="button"
+              className="reserve-btn"
+              onClick={() => handleReservation(rocket.id, rocket.reserved)}
+            >
+              {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+            </button>
+          </li>
         ))}
     </ul>
   );

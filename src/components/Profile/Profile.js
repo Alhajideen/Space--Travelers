@@ -56,7 +56,7 @@ const Profile = () => {
         </table>
       </div>
 
-      <div className="my-rockets">
+      <div className="my-rockets" data-testid="reserved-rockets">
         <div className="header-text">
           <h2>My Rockets</h2>
         </div>

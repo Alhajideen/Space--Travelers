@@ -18,7 +18,7 @@ const Rockets = () => {
 
   return (
     <section className="rockets-container">
-      <ul className="rockets-list">
+      <ul className="rockets-list" data-testid="rocket-list">
         {loading
           ? 'Fetching Data'
           : rocketsArray.map((rocket) => (
@@ -35,6 +35,7 @@ const Rockets = () => {
                   type="button"
                   className={rocket.reserved ? 'cancel-btn' : 'res-btn'}
                   onClick={() => handleReservation(rocket.id, rocket.reserved)}
+                  data-testid={`btn-${rocket.id}`}
                 >
                   {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
                 </button>

@@ -4,7 +4,7 @@ import logo from '../images/logo.png';
 import '../styles/Navbar.css';
 
 const Navbar = () => (
-  <header className="header-container">
+  <header className="header-containers">
     <NavLink to="/" className="home-page">
       <img src={logo} alt="logo" className="logo" />
       <h1 className="title" data-testid="title">Space Traverlers&apos; Hub</h1>
